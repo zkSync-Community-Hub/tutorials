@@ -4,6 +4,16 @@ This repository contains different tutorials submitted by community members.
 
 We encourage authors to keep their tutorials updated. 
 
+## Tutorial requirements
+
+- All tutorials must showcase how to develop applications on zkSync Era.
+- Tutorials must take a neutral stance and refrain from promoting projects.
+- Tutorials must be an original and NOT a work that was previously published.
+- You must be the rightful intellectual property owner (author) of your submission.
+- Tutorials can contain relevant external sources, only when referenced accordingly.
+- Tutorials must have working code to support the tutorial.
+- Tutorials must be provided following the [guidelines in this  repository](#tutorial-guidelines).
+
 ## Tutorial guidelines
 
 - Create a new folder inside `tutorials` with the name of your tutorial in *kebab-case*, e.g. `my-awesome-tutorial`.
@@ -15,16 +25,6 @@ We encourage authors to keep their tutorials updated.
 - Create an `images` folder with any images to support the tutorial.
 
 Use [zksync-cli-quickstart tutorial](./tutorials/zksync-cli-quickstart/) as a reference.
-
-## Tutorial requirements
-
-- All tutorials must showcase how to develop applications on zkSync Era.
-- Tutorials must take a neutral stance and refrain from promoting projects.
-- Tutorials must be an original and NOT a work that was previously published.
-- You must be the rightful intellectual property owner (author) of your submission.
-- Tutorials can contain relevant external sources, only when referenced accordingly.
-- Tutorials must have working code to support the tutorial.
-- Tutorials must be provided following the [guidelines in this  repository](#tutorial-guidelines).
 
 
 ## How to submit a tutorial
