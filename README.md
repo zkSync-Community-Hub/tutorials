@@ -28,6 +28,7 @@ We encourage authors to keep their tutorials updated.
   - Conclusion (Level 2 heading): summarize what the reader has accomplished by following your tutorial
 - Create a `code` folder with any code to support the tutorial.
 - Create an `images` folder with any images to support the tutorial.
+  - If your tutorial contains images, make sure to compress them using https://squoosh.app/ before adding them to the `images` folder.
 
 Use the [TUTORIAL_TEMPLATE](./tutorials/TUTORIAL_TEMPLATE.md) and [zksync-cli-quickstart tutorial](./tutorials/zksync-cli-quickstart/) as a reference.
 
