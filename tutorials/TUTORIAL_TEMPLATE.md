@@ -17,7 +17,9 @@
 3. Conceptual articles that provide important background a reader might find helpful, such as Understanding the Account Abstraction.
 -->
 
-## Step 1 — Doing the First Thing
+## Build time!
+
+### Step 1 — Doing the First Thing
 
 <!-- 
 1. Explain what will be done in this step
@@ -31,19 +33,16 @@ echo "Hello, World!"
 ```
 
 <!--
-1. Explain the command output
+1. Explain the command output in separate code block
 -->
-
-# Expected output
-
 ```bash
 Hello, World!
 ```
 
-Step 2 — Doing the Next Thing
+### Step 2 — Doing the Next Thing
 <!-- Repeat the format of Step 1 for all subsequent steps -->
 
-Conclusion
+## Conclusion
 <!-- 
 1. Summarize what the reader has accomplished by following your tutorial
 2. Describe what the reader can do next

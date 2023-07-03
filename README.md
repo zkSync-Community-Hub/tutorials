@@ -21,10 +21,10 @@ We encourage authors to keep their tutorials updated.
   - Title (Level 1 heading)
   - Introduction (Level 3 heading): explain what is going to be built in this tutorial.
   - Prerequisites (Level 2 heading): system and technical requirements. **Indicate the specific versions of packages and compilers used to build the project.**
-  - Build time!: step-by-step details on how to build the project.
-    - Step 1 — Doing the First Thing (Level 2 heading)
-    - Step 2 — Doing the Next Thing (Level 2 heading)
-    - Step n — Doing the Last Thing (Level 2 heading)
+  - Build time! (Level 2 heading): step-by-step details on how to build the project.
+    - Step 1 — Doing the First Thing (Level 3 heading)
+    - Step 2 — Doing the Next Thing (Level 3 heading)
+    - Step n — Doing the Last Thing (Level 3 heading)
   - Conclusion (Level 2 heading): summarize what the reader has accomplished by following your tutorial
 - Create a `code` folder with any code to support the tutorial.
 - Create an `images` folder with any images to support the tutorial.
