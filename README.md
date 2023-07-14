@@ -1,6 +1,11 @@
 # Community tutorials
+<div align="center">
 
-This repository contains different tutorials submitted by community members. 
+![](./community-tutorials.png)
+
+</div>
+
+This repository contains different tutorials submitted by community members. Tutorials will be referenced in the [zkSync Era documentation website](https://era.zksync.io/docs/).
 
 We encourage authors to keep their tutorials updated. 
 
@@ -25,11 +30,26 @@ We encourage authors to keep their tutorials updated.
     - Step 1 — Doing the First Thing (Level 3 heading)
     - Step 2 — Doing the Next Thing (Level 3 heading)
     - Step n — Doing the Last Thing (Level 3 heading)
-  - Conclusion (Level 2 heading): summarize what the reader has accomplished by following your tutorial
+  - Conclusion (Level 2 heading): summarize what the reader has accomplished by following your tutorial.
 - Create a `code` folder with any code to support the tutorial.
 - Create an `images` folder with any images to support the tutorial.
   - If your tutorial contains images, make sure to compress them using https://squoosh.app/ before adding them to the `images` folder.
+- Add the tutorial details to the `tutorials.json` file. Each tutorial must have:
 
+```json
+{
+    "title": "", // 60 characters max
+    "description": "", // 280 characters max
+    "tags": [ // 4 tags max. Examples: oracles, devtools, nfts, tokens, indexers,
+      "",
+      ""
+    ],
+    "level": "", // beginner, intermediate or expert
+    "author": "", // person, project, or company
+    "slug": "" // the tutorial folder name inside `/tutorials`
+  }
+```
+  
 Use the [TUTORIAL_TEMPLATE](./tutorials/TUTORIAL_TEMPLATE.md) and [zksync-cli-quickstart tutorial](./tutorials/zksync-cli-quickstart/) as a reference.
 
 ## How to submit a tutorial
