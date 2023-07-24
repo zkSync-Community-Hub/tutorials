@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Build a smart contract using thirdweb",
+    "description": "This guide will walk you through the process of creating and deploying a smart contract using thirdweb. We will be using the thirdweb CLI to create a smart contract, and then deploy it to zkSync Era using thirdweb Deploy and alternatively simply deploying a prebuilt contract from thirdweb Explore.",
+    "tags": ["smart contract", "devtools"],
+    "level": "beginner",
+    "author": "thirdweb",
+    "slug": "build-smart-contract-thirdweb"
+  }
+]

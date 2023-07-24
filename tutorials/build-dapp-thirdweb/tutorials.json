@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Build a dapp using thirdweb",
+    "description": "This guide will walk you through the process of creating and deploying a dapp using thirdweb. We will be using the thirdweb CLI to create a dapp, connect it to our contract on zkSync Era, and deploy it to decentralized storage using thirdweb Deploy.",
+    "tags": ["dapp", "devtools"],
+    "level": "beginner",
+    "author": "thirdweb",
+    "slug": "build-dapp-thirdweb"
+  }
+]
