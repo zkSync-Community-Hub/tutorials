@@ -1,0 +1,21 @@
+{
+  "name": "tutorials",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:zkSync-Community-Hub/tutorials.git",
+  "author": "Dustin Brickwood <dustinbrickwood204@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cspell": "^6.31.2",
+    "markdownlint": "^0.29.0",
+    "markdownlint-cli": "^0.35.0",
+    "prettier": "^3.0.0"
+  },
+  "scripts": {
+    "lint:fmt": "prettier --check \"tutorials/**/*.md\"",
+    "lint:mdl": "markdownlint -c .markdownlint.json \"tutorials/**/*.md\"",
+    "lint:spell": "cspell tutorials/**/*.md",
+    "fix:fmt": "prettier --write \"tutorials/**/*.md\"",
+    "fix:mdl": "yarn lint:mdl --fix"
+  }
+}

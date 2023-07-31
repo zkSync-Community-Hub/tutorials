@@ -13,7 +13,7 @@ Here are the system requirements and the versions I used:
 
 Additionally, you'd need an account with ETH on zkSync Era testnet. You can use the [faucet from the official portal](https://goerli.portal.zksync.io/faucet).
 
-## Build time!
+## Build time
 
 1. Install the zksync-cli with:
 
@@ -22,7 +22,7 @@ npm i -g zksync-cli@latest
 ```
 
 2. Create a sample project
-  
+
 ```sh
 zksync-cli create quickstart  && cd quickstart
 ```

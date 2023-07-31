@@ -16,7 +16,7 @@ This repository hosts a collection of community tutorials that help developers u
 
 To submit a tutorial, please follow the guidelines below:
 
-1. 📂 Create a new folder inside `tutorials` with the name of your tutorial in *kebab-case*, e.g., `my-awesome-tutorial`.
+1. 📂 Create a new folder inside `tutorials` with the name of your tutorial in _kebab-case_, e.g., `my-awesome-tutorial`.
 2. 📄 In this folder, create a `TUTORIAL.md`. The tutorial must follow the prescribed structure, which includes a title, introduction, prerequisites, build steps, and a conclusion.
 3. 📝 Ensure to specify the exact versions of packages and compilers used to build the project in the prerequisites section.
 4. 📁 Create a `code` folder with any code necessary to support the tutorial.
