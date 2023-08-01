@@ -58,3 +58,11 @@ Use the [TUTORIAL_TEMPLATE](./tutorials/TUTORIAL_TEMPLATE.md) and [zksync-cli-qu
 - Create a new branch and [add your tutorial following the guidelines](#tutorial-guidelines).
 - Make sure [your tutorial follows the requirements](#tutorial-requirements)
 - Create a pull request.
+
+## Linting, Formatting, and Spell Check
+
+Before submitting your tutorial, ensure that your content adheres to the repository's standards by running the following checks:
+
+- Formatting with Prettier: `yarn lint:fmt`
+- Spell Check: `yarn lint:spell` - If lint:spell doesn't recognize a word, and you’re sure that it’s correct, consider adding it to cspell-zksync.txt.
+- Linting: `yarn lint:mdl`  
