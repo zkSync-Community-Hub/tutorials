@@ -1,0 +1,26 @@
+{
+    "default": true,
+    "fenced-code-language": false,
+    "no-duplicate-header": false,
+    "first-header-h1": false,
+    "first-line-h1": false,
+    "no-inline-html": false,
+    "ol-prefix": false,
+    "MD026": {
+        "punctuation": ".,;:!。，；：！:"
+    },
+    "MD013": false,
+    "MD001": false,
+    "MD051": false,
+    "MD025": false,
+    "MD036": false,
+    "MD003": false,
+    "MD007": {
+        "indent": 2,
+        "code_blocks": false,
+        "headings": false,
+        "tables": false
+    },
+    "no-hard-tabs": false,
+    "whitespace": false
+}
