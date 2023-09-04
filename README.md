@@ -9,6 +9,10 @@ This repository contains different tutorials submitted by community members. Tut
 
 We encourage authors to keep their tutorials updated. 
 
+### zkSync Tutorials 
+
+For tutorials created and maintained by the zkSync team, [check out this repository here](https://github.com/matter-labs/tutorials).
+
 ## Tutorial requirements
 
 - All tutorials must showcase how to develop applications on zkSync Era.
