@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In this tutorial, you will learn how to deploy a subgraph that tracks a specific address on zkSync Era mainnet. Deploying graphs is a great way to query data from network historically and in real-time.  
+In this tutorial, you will learn how to deploy a subgraph that tracks a specific address on zkSync Era mainnet. Deploying graphs is a great way to query data from network historically and in real-time.
 
 The Graph is a decentralized protocol for indexing and querying data from blockchains. The Graph serves queries over data that is easily stored, decentralized, and secured by the blockchain. You will learn how to deploy a subgraph that tracks a specific address on zkSync Era mainnet. You can use this subgraph to query data from zkSync Era mainnet.
 
@@ -16,12 +16,12 @@ The Graph is a decentralized protocol for indexing and querying data from blockc
 
 ### Step 1 — Visit theGraph Studio and Connect Wallet
 
-- Visit https://thegraph.com/studio/ 
+- Visit <https://thegraph.com/studio/>
 - Connect your wallet
 
 ### Step 2 — Create a new Subgraph
 
-- Click on the button to create a new subgraph 
+- Click on the button to create a new subgraph
 - Enter the name of the subgraph
 - Select the network you want to deploy the subgraph on, in this case: `zkSync Era (Subgraph Only)`
 
@@ -46,8 +46,8 @@ The Graph is a decentralized protocol for indexing and querying data from blockc
 ### Step 5 — Query the Subgraph
 
 - Visit the [studio](https://thegraph.com/studio/) and then the section for the overview on this created subgraph and click on the `Playground` tab
-- The tab will already have a pre-written query for you, which you can run by clicking on the `play` button. The query will look as follows: 
-  
+- The tab will already have a pre-written query for you, which you can run by clicking on the `play` button. The query will look as follows:
+
   ```graphql
   {
     approvals(first: 5) {
@@ -69,7 +69,7 @@ The Graph is a decentralized protocol for indexing and querying data from blockc
 
   ```graphql
   {
-    approvals(where: {owner: "0x7c5a0ce9267ed19b22f8cae653f198e3e8daf098"}) {
+    approvals(where: { owner: "0x7c5a0ce9267ed19b22f8cae653f198e3e8daf098" }) {
       id
       owner
       spender
@@ -82,7 +82,9 @@ The Graph is a decentralized protocol for indexing and querying data from blockc
 
   ```graphql
   {
-    bridgeBurns(where: {_account: "0x7c5a0ce9267ed19b22f8cae653f198e3e8daf098"}) {
+    bridgeBurns(
+      where: { _account: "0x7c5a0ce9267ed19b22f8cae653f198e3e8daf098" }
+    ) {
       id
       _account
       _amount
@@ -95,7 +97,9 @@ The Graph is a decentralized protocol for indexing and querying data from blockc
 
   ```graphql
   {
-    bridgeMints(where: {_account: "0x7c5a0ce9267ed19b22f8cae653f198e3e8daf098"}) {
+    bridgeMints(
+      where: { _account: "0x7c5a0ce9267ed19b22f8cae653f198e3e8daf098" }
+    ) {
       id
       _account
       _amount
