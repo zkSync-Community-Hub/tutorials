@@ -6,7 +6,7 @@ By the end of this tutorial you will understand how to integrate your dApp built
 
 This repo is designed to show how to build a dApp that uses [RedStone oracles](https://redstone.finance/) on [zkSync](https://zksync.io/).
 
-The repo contains an implementation of an NFT marketplace dApp with so-called "stable" price. It means that sellers can create sell orders (offers), specifying the price amount in USD. But buyers are able to pay with native coins, the required amount of which is calculated dynamically at the moment of the order execution. Repo lacks few crucial parts which will demonstrate how to integrate RedStone oracles and deploy dApp on zkSync Era Testnet. 
+The repo contains an implementation of an NFT marketplace dApp with so-called "stable" price. It means that sellers can create sell orders (offers), specifying the price amount in USD. But buyers are able to pay with native coins, the required amount of which is calculated dynamically at the moment of the order execution. Repo lacks few crucial parts which will demonstrate how to integrate RedStone oracles and deploy dApp on zkSync Era Testnet.
 
 ## 🧑‍💻 Implementation
 
@@ -96,12 +96,14 @@ We've used hardhat test framework to contract tests. All the tests are located i
 ### Prepare repo
 
 #### 1. Clone this repo
+
 ```sh
 git clone https://github.com/zkSync-Community-Hub/tutorials
 cd tutorials/tutorials/zkSync-RedStone-stable-price-marketplace-tutorial
 ```
 
 #### 2. Install dependencies
+
 ```sh
 yarn install
 ```
@@ -112,11 +114,11 @@ You can run zkSync node in dockerized setup by following instructions presented 
 
 ### Get familiar with the code
 
-If you are not familiar with the code yet, please read [implementation description](#🧑‍💻-implementation) 
+If you are not familiar with the code yet, please read [implementation description](#🧑‍💻-implementation)
 
 ### Integrate with RedStone Oracles
 
-Now it is time to integrate RedStone Oracles into the marketplace. As you maybe noticed some parts of the code are missing the implementation. Let me give you instructions on how to integrate RedStone oracles. 
+Now it is time to integrate RedStone Oracles into the marketplace. As you maybe noticed some parts of the code are missing the implementation. Let me give you instructions on how to integrate RedStone oracles.
 
 #### 1. Adjust smart contract
 
@@ -129,16 +131,16 @@ pragma solidity ^0.8.4;
 import "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol";
 import "./Marketplace.sol";
 
-/* 
+/*
   StableMarketplace contract should extend MainDemoConsumerBase contract
   For being able to use redstone oracles data, more inf:
-  https://docs.redstone.finance/docs/smart-contract-devs/get-started/redstone-core#1-adjust-your-smart-contracts 
+  https://docs.redstone.finance/docs/smart-contract-devs/get-started/redstone-core#1-adjust-your-smart-contracts
 */
 contract StableMarketplace is Marketplace, MainDemoConsumerBase {
   /*
     `_getPriceFromOrder` function should uses the `getOracleNumericValueFromTxMsg` function,
     which fetches signed data from tx calldata and verifies its signature
-  */ 
+  */
   function _getPriceFromOrder(
     SellOrder memory order
   ) internal view override returns (uint256) {
@@ -187,7 +189,7 @@ async function buy(orderId: string) {
     await buyTx.wait();
 
     return buyTx;
-  } catch { 
+  } catch {
     const errText = "Error happened while buying the NFT";
     alert(errText);
   }
@@ -197,65 +199,77 @@ async function buy(orderId: string) {
 ### Test dApp locally
 
 #### 1. Check if tests pass
+
 Tests work only when integration with RedStone oracles is ready
+
 ```sh
 yarn test
-``` 
+```
 
 #### 2. Compile contracts
+
 ```sh
 yarn compile
-``` 
+```
 
 #### 3. Deploy contracts on local blockchain
+
 You need to populate .env file with private key for deployment e.g.
+
 ```
 WALLET_PRIVATE_KEY=0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110
 ```
+
 and then run
+
 ```sh
 yarn deploy:local
 ```
 
 #### 4. Run react app
+
 ```sh
 yarn app:start
 ```
 
-The app should be running on http://localhost:3000
+The app should be running on <http://localhost:3000>
 
 #### 3. Configure metamask
 
 ##### 3.1 Add local hardhat network to metamask
+
 Select `Networks dropdown` -> `Add network` and enter the following details:
 **Network Name**|**hardhat-local**
 :-----:|:-----:
-New RPC URL|http://localhost:3050
+New RPC URL|<http://localhost:3050>
 Chain ID|270
 Currency Symbol|ETH
 
 Then hit the `Save` button.
 
 ##### 3.2 Add local wallets to metamask
+
 - `User 1`: `0xac1e735be8536c6534bb4f17f06f6afc73b2b5ba84ac2cfb12f7461b20c0bbe3`
 - `User 2`: `0xd293c684d884d56f8d6abd64fc76757d3664904e309a0645baf8522ab6366d9e`
-
 
 #### 4. Explore the app in browser
 
 <img alt="stable-marketplace-app" src="docs/img/stable-marketplace-app.png" width="800" />
 
 ##### Mint NFTs
+
 After visiting the app first time you will see an almost empty screen with the `+ Mint new NFT` link. Click this link to mint new NFTs. After the minting transaction confirmation you will see your NFT in the left column.
 
 <img alt="my-nfts" src="docs/img/my-nfts.png" width="300" />
 
 ##### Post sell orders
+
 Once you mint any NFTs, you can post sell order for each one of them. Click the SELL button and provide the USD value. You will be asked to confirm 2 transactions: for NFT transfer approval, and for the marketplace order creation. After their confirmation, you will see your order in the Orders column.
 
 <img alt="orders" src="docs/img/orders.png" width="300" />
 
 ##### Buy NFTs
+
 You can also switch metamask account and buy the NFT. I would recommend to open the developer tools in browser at the network tab and explore network requests that are being sent before the buy transaction sending.
 
 You should see at least 2 requests with the ETH price data and crypto signatures. This data along with signatures is being attached for each contract call, that wants to process redstone oracles data.
@@ -277,12 +291,13 @@ RedStone offers a radically different design of Oracles catering to the needs of
 To learn more about RedStone oracles design check out the [RedStone docs.](https://docs.redstone.finance/docs/introduction)
 
 ## 🗝️ Key facts
+
 - The [modular architecture](https://docs.redstone.finance/docs/smart-contract-devs/how-it-works#data-flow) maintains [data integrity](https://docs.redstone.finance/docs/smart-contract-devs/how-it-works#data-format) from source to smart contracts
 - There are [3 different ways](https://docs.redstone.finance/docs/smart-contract-devs/how-it-works#3-ways-to-integrate) to integrate our service tailored to your needs
 - We provide feeds for more than [1000 assets](https://app.redstone.finance/#/app/tokens) integrating [~50 data sources](https://app.redstone.finance/#/app/sources)
 - We are present on [20+ chains](https://showroom.redstone.finance/)
 - RedStone has been live on mainnets since March 2022 with no downtime. Code was audited by ABDK, Packshield and L2Beat Co-Founder.
-- RedStone was a launch partner for [DeltaPrime](https://deltaprime.io/) on Avalanche and delivered data feeds not available anywhere else. Thanks to that DeltaPrime became the top 3 fastest growing dApps according to DefiLama.
+- RedStone was a launch partner for [DeltaPrime](https://deltaprime.io/) on Avalanche and delivered data feeds not available anywhere else. Thanks to that DeltaPrime became the top 3 fastest growing dApps according to DeFiLama.
 
 ## 📈 What data is available
 
@@ -368,13 +383,11 @@ Then you can wrap your ethers contract pointing to the selected [Redstone data s
 const yourEthersContract = new ethers.Contract(address, abi, provider);
 
 // Connecting all provider's prices (consumes more GAS)
-const wrappedContract = WrapperBuilder.wrap(contract).usingDataService(
-  {
-    dataServiceId: "redstone-main-demo",
-    uniqueSignersCount: 1,
-    dataFeeds: ["ETH", "BTC"],
-  },
-);
+const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
+  dataServiceId: "redstone-main-demo",
+  uniqueSignersCount: 1,
+  dataFeeds: ["ETH", "BTC"],
+});
 ```
 
 Now you can access any of the contract's methods in exactly the same way as interacting with the ethers-js code:
