@@ -16,7 +16,7 @@
     "compile": "hardhat compile"
   },
   "dependencies": {
-    "@redstone-finance/evm-connector": "^0.2.5",
+    "@redstone-finance/evm-connector": "^0.2.6",
     "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
