@@ -97,8 +97,8 @@ We've used hardhat test framework to contract tests. All the tests are located i
 
 #### 1. Clone this repo
 ```sh
-git clone https://github.com/redstone-finance/stable-price-marketplace
-cd stable-price-marketplace
+git clone https://github.com/zkSync-Community-Hub/tutorials
+cd tutorials/tutorials/zkSync-RedStone-stable-price-marketplace-tutorial
 ```
 
 #### 2. Install dependencies
@@ -160,7 +160,7 @@ async function getContractInstance(contractName) {
   return new ethers.Contract(address, abi, signer);
 }
 
-async function buy(orderId) {
+async function buy(orderId: string) {
   const marketplace = await getContractInstance("marketplace");
 
   // Wrapping marketplace contract instance.
@@ -197,6 +197,7 @@ async function buy(orderId) {
 ### Test dApp locally
 
 #### 1. Check if tests pass
+Tests work only when integration with RedStone oracles is ready
 ```sh
 yarn test
 ``` 

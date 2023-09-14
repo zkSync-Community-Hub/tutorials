@@ -6,8 +6,8 @@ import { WrapperBuilder } from "@redstone-finance/evm-connector";
 import { expect } from "chai";
 import { DEPLOYER_WALLET_PK, SELLER_RICH_WALLET_PK, BUYER_RICH_WALLET_PK, deployContract } from "./common";
 
-describe("Marketplace core functions test", function () {
-  let marketplaceContract: Contract,
+describe("Stable marketplace core functions test", function () {
+  let stableMarketplaceContract: Contract,
     exampleNFTContract: Contract,
     nftContractAddress: string,
     marketplaceAddress: string,
@@ -23,8 +23,8 @@ describe("Marketplace core functions test", function () {
     const deployer = new Deployer(hre, wallet);
 
     // Deploy marketplace contract
-    marketplaceContract = await deployContract(deployer, "StableMarketplace")
-    marketplaceAddress = marketplaceContract.address;
+    stableMarketplaceContract = await deployContract(deployer, "StableMarketplace")
+    marketplaceAddress = stableMarketplaceContract.address;
 
     // Deploy NFT contract
     exampleNFTContract = await deployContract(deployer, "ExampleNFT")
@@ -44,14 +44,14 @@ describe("Marketplace core functions test", function () {
   it("Seller should post sell order for token 2 with stable USD price", async function () {
     // Approve NFT transfer
     const approveTx = await exampleNFTContract.approve(
-      marketplaceContract.address,
+      stableMarketplaceContract.address,
       tokenId
     );
     await approveTx.wait();
 
     // Post sell order
     const usdPrice = ethers.utils.parseEther("100");
-    const postOrderTx = await marketplaceContract.postSellOrder(
+    const postOrderTx = await stableMarketplaceContract.postSellOrder(
       nftContractAddress,
       tokenId,
       usdPrice
@@ -65,7 +65,7 @@ describe("Marketplace core functions test", function () {
   });
 
   it("Should wrap marketplace contract with redstone wrapper", async function () {
-    const contract = marketplaceContract.connect(buyer);
+    const contract = stableMarketplaceContract.connect(buyer);
     wrappedMarketplaceContract = WrapperBuilder.wrap(contract).usingDataService(
       {
         dataServiceId: "redstone-main-demo",
@@ -75,11 +75,17 @@ describe("Marketplace core functions test", function () {
     );
   });
 
+  it("Should get all orders", async function () {
+    const allOrders = await stableMarketplaceContract.getAllOrders();
+    expect(allOrders.length).to.equal(1);
+    expect(allOrders[0].tokenId.toString()).to.equal("1");
+  });
+
   it("Buying should fail with smaller amount then seller requested", async function () {
     const orderId = 0;
 
     // Get expected ETH amount
-    const expectedEthAmount = await wrappedMarketplaceContract.getPrice(
+    const expectedEthAmount = await stableMarketplaceContract.getPrice(
       orderId
     );
     logExpectedAmount(expectedEthAmount);
