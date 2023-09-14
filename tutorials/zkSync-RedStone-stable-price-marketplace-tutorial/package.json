@@ -12,7 +12,8 @@
     "app:eject": "react-scripts eject",
     "test": "NODE_ENV=test hardhat test --network zkSyncTestnet",
     "deploy:local": "NODE_ENV=test hardhat deploy-zksync --script deploy.ts",
-    "deploy": "yarn hardhat deploy-zksync --script deploy.ts"
+    "deploy": "yarn hardhat deploy-zksync --script deploy.ts",
+    "compile": "hardhat compile"
   },
   "dependencies": {
     "@redstone-finance/evm-connector": "^0.2.5",
