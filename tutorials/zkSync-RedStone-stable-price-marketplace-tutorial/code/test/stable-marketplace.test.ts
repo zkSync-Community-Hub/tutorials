@@ -85,7 +85,7 @@ describe("Stable marketplace core functions test", function () {
     const orderId = 0;
 
     // Get expected ETH amount
-    const expectedEthAmount = await stableMarketplaceContract.getPrice(
+    const expectedEthAmount = await wrappedMarketplaceContract.getPrice(
       orderId
     );
     logExpectedAmount(expectedEthAmount);

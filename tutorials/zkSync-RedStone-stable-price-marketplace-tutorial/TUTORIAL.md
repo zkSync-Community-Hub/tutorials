@@ -157,11 +157,6 @@ The second thing to do is adjust the Typescript code of the dApp. Please take a 
 ```js
 import { WrapperBuilder } from "@redstone-finance/evm-connector";
 
-async function getContractInstance(contractName) {
-  ...
-  return new ethers.Contract(address, abi, signer);
-}
-
 async function buy(orderId: string) {
   const marketplace = await getContractInstance("marketplace");
 
@@ -183,7 +178,7 @@ async function buy(orderId: string) {
     const expectedEthAmount = await wrappedMarketplaceContract.getPrice(orderId);
 
     // Sending buy tx
-    const buyTx = await wrappedMarketplaceContract.wi(orderId, {
+    const buyTx = await wrappedMarketplaceContract.buy(orderId, {
       value: expectedEthAmount.mul(101).div(100), // a buffer for price movements
     });
     await buyTx.wait();

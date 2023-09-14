@@ -1,6 +1,6 @@
 import { Web3Provider, Contract } from "zksync-web3";
-import { WrapperBuilder } from "@redstone-finance/evm-connector";
-import { ethers, utils } from "ethers";
+// import { WrapperBuilder } from "@redstone-finance/evm-connector";
+import { utils } from "ethers";
 import localAddresses from "../config/zkSyncTestnet-addresses.json";
 import nftAbi from "../config/nft-abi.json";
 import marketplaceAbi from "../config/marketplace-abi.json";
