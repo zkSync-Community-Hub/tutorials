@@ -1,0 +1,146 @@
+.App {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #333;
+
+  #logo {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #3e80c8;
+    border-bottom: 3px solid #3e80c8;
+  }
+
+  .card-with-shadow {
+    // Blue version
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(164, 201, 250, 0.4) 0px 0px 0px 4px;
+
+    // Light shadow version
+    // box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+    padding: 14px;
+    border-radius: 25px;
+  }
+
+  .increase-on-hover {
+    transition: all ease 0.3s;
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  #wallet-connector {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    color: #3e80c8;
+    a {
+      color: #3e80c8;
+    }
+  }
+
+  #powered-by-redstone {
+    position: fixed;
+
+    // Near logo
+    // top: 90px;
+    // left: 48px;
+
+    // Bottom left
+    bottom: 30px;
+    left: 30px;
+    
+    font-size: 12px;
+    // text-align: left;
+
+    img {
+      position: relative;
+      top: 5px;
+      left: 4px;
+    }
+  }
+
+  #main-content {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 0;
+
+    h2 {
+      border-bottom: 1px solid #ddd;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-top: 0;
+      font-weight: 400;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .card {
+        width: 300px;
+        height: 80px;
+
+        // Light gray line shadow border
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+        // Light shadow version
+        // box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+        margin: 8px;
+        margin-bottom: 10px;
+        display: flex;
+        padding: 0px 25px;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+    }
+
+    #nft-secion {
+      border-right: 1px solid #ddd;
+      min-height: 120vh;
+
+      .mint-new-nft-link {
+        margin-top: 20px;
+        color: #777;
+      }
+    }
+
+    .nft-token-id {
+      font-size: 18px;
+    }
+
+    img.nft-icon {
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .nft-card {
+      .left {
+        display: flex;
+        align-items: center;
+      }
+
+      .price {
+        font-size: 14px;
+      }
+    }
+  }
+
+  a.button {
+    color: #555;
+    text-decoration: none;
+  }
+  
+  a.button:hover {  
+    font-weight: 500;
+  }
+}

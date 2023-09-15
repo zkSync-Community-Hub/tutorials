@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
+    "composite": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "./src",
+    "./test",
+    "./typechain-types",
+    "package.json",
+    "src/**/*.json",
+    "./artifacts/**/*.json"
+  ],
+  "files": ["./hardhat.config.ts"]
+}
