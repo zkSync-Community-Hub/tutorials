@@ -159,3 +159,6 @@ ISTN
 Zerion
 pepe
 PEPE
+Arweave
+Streamr
+TLDR
