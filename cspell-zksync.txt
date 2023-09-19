@@ -157,7 +157,8 @@ Hola
 mundo
 ISTN
 Zerion
-
+pepe
+PEPE
 Arweave
 Streamr
 TLDR
