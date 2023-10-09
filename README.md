@@ -48,7 +48,7 @@ For tutorials created and maintained by the zkSync team, [check out this reposit
       "",
       ""
     ],
-    "level": "", // beginner, intermediate or expert
+    "time": "", // time taken to complete tutorial in hours, e.g. "1 hour", "2 to 4 hours"
     "author": "", // person, project, or company
     "slug": "" // the tutorial folder name inside `/tutorials`
   }
