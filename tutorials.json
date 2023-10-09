@@ -1,12 +1,27 @@
 [
   {
-    "title": "",
-    "description": "",
-    "tags": [
-      ""
-    ],
-    "level": "",
-    "author": "",
-    "slug": ""
+    "title": "zkSync Era quickstart with zksync-cli",
+    "description":
+      "Use the zksync-cli to deploy your first smart contract to zkSync Era testnet.",
+    "tags": ["cli", "testnet", "smart contract"],
+    "time": "1 hour",
+    "author": "A. Ufano",
+    "slug": "zksync-cli-quickstart"
+  },
+  {
+    "title": "Use Redstone to feed offchain data to smart contracts",
+    "description": "By the end of this tutorial you will understand how to integrate your dApp built on zkSync with RedStone oracles.",
+    "tags": ["oracle", "redstone", "smart contract"],
+    "time": "2 to 3 hours",
+    "author": "C. Haliniarz",
+    "slug": "zkSync-RedStone-stable-price-marketplace-tutorial"
+  },
+  {
+    "title": "Deploy a Subgraph Tracking a Specific Address on zkSync",
+    "description": "learn how to deploy a subgraph that tracks a specific address on zkSync Era mainnet. Deploying graphs is a great way to query data from network historically and in real-time.",
+    "tags": ["graph", "indexer", "subgraph"],
+    "time": "1 hour",
+    "author": "D. Huisman",
+    "slug": "the-graph"
   }
 ]
