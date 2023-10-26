@@ -6,8 +6,6 @@ In this tutorial, you will learn how to create a website and connect to zkSync E
 
 The Web3Modal SDK allows you to easily connect your Web3 dapp with wallets. It provides a simple and intuitive interface for dapps to request actions such as signing transactions and interacting with smart contracts on the blockchain.
 
-![Web3Modal & zkSync](./images/web3modal-zksync.png)
-
 ## Prerequisites
 
 - Node.js (^18.17.1) and NPM
