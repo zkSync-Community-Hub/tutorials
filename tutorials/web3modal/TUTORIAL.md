@@ -1,4 +1,4 @@
-# Create a website and connect to zkSync ERA with your wallet 
+# Create a website and connect to zkSync ERA with your wallet
 
 ### Introduction
 
@@ -34,67 +34,63 @@ npm install @web3modal/wagmi wagmi viem
 Let's create a `Web3Modal.tsx` file inside a `context` folder, and we’ll import the following dependencies from Web3Modal and Wagmi
 
 ```ts
-import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
 
-import { WagmiConfig } from 'wagmi'
-import { zkSync, zkSyncTestnet } from 'wagmi/chains'
+import { WagmiConfig } from "wagmi";
+import { zkSync, zkSyncTestnet } from "wagmi/chains";
 ```
 
 We now need to get a Project ID from [WalletConnect’s Cloud website](https://cloud.walletconnect.com/)
 
 ```ts
-const projectId = 'YOUR_PROJECT_ID'
+const projectId = "YOUR_PROJECT_ID";
 ```
 
 Once that’s done we can create our wagmiConfig instance
 
 ```ts
 const metadata = {
-  name: 'Web3Modal & zkSync',
-  description: 'Web3Modal & zkSync Tutorial',
-  url: 'https://web3modal.com',
-  icons: ['https://avatars.githubusercontent.com/u/37784886']
-}
-const chains = [zkSync, zkSyncTestnet]
-const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+  name: "Web3Modal & zkSync",
+  description: "Web3Modal & zkSync Tutorial",
+  url: "https://web3modal.com",
+  icons: ["https://avatars.githubusercontent.com/u/37784886"],
+};
+const chains = [zkSync, zkSyncTestnet];
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
 ```
 
 Now we can create a Web3Modal instance to initiate our modal, let's also add zkSync as the default chain.
 
 ```ts
-createWeb3Modal({ wagmiConfig, projectId, chains, defaultChain: zkSync })
+createWeb3Modal({ wagmiConfig, projectId, chains, defaultChain: zkSync });
 ```
 
 We’ll now add the WagmiConfig component, this is how our Web3Modal.tsx file should look like
 
 ```ts
-'use client'
+"use client";
 
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from "react";
 
-import { WagmiConfig } from 'wagmi'
-import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
-import { zkSync, zkSyncTestnet } from 'wagmi/chains'
+import { WagmiConfig } from "wagmi";
+import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
+import { zkSync, zkSyncTestnet } from "wagmi/chains";
 
-const projectId = 'YOUR_PROJECT_ID'
+const projectId = "YOUR_PROJECT_ID";
 
 const metadata = {
-  name: 'Web3Modal & zkSync',
-  description: 'Web3Modal & zkSync Tutorial',
-  url: 'https://web3modal.com',
-  icons: ['https://avatars.githubusercontent.com/u/37784886']
-}
-const chains = [zkSync, zkSyncTestnet]
-const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+  name: "Web3Modal & zkSync",
+  description: "Web3Modal & zkSync Tutorial",
+  url: "https://web3modal.com",
+  icons: ["https://avatars.githubusercontent.com/u/37784886"],
+};
+const chains = [zkSync, zkSyncTestnet];
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
 
-createWeb3Modal({ wagmiConfig, projectId, chains, defaultChain: zkSync })
+createWeb3Modal({ wagmiConfig, projectId, chains, defaultChain: zkSync });
 
 export function Web3Modal({ children }: PropsWithChildren) {
-  return(
-      <WagmiConfig config={wagmiConfig}>
-        {children}
-      </WagmiConfig>
-    )
+  return <WagmiConfig config={wagmiConfig}>{children}</WagmiConfig>;
 }
 ```
 
@@ -103,27 +99,25 @@ export function Web3Modal({ children }: PropsWithChildren) {
 Now in our `app/layout.tsx` file we'll import our Web3Modal component
 
 ```ts
-import type { Metadata } from 'next'
-import { PropsWithChildren } from 'react'
-import './globals.css'
+import type { Metadata } from "next";
+import { PropsWithChildren } from "react";
+import "./globals.css";
 
-import { Web3Modal } from './context/Web3Modal'
+import { Web3Modal } from "./context/Web3Modal";
 
 export const metadata: Metadata = {
-  title: 'Web3Modal & zkSync',
-  description: 'Web3Modal & zkSync Tutorial',
-}
+  title: "Web3Modal & zkSync",
+  description: "Web3Modal & zkSync Tutorial",
+};
 
-export default function RootLayout({children}: PropsWithChildren) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body>
-        <Web3Modal>
-          {children}
-        </Web3Modal>
+        <Web3Modal>{children}</Web3Modal>
       </body>
     </html>
-  )
+  );
 }
 ```
 
@@ -132,14 +126,14 @@ export default function RootLayout({children}: PropsWithChildren) {
 Now we can add the Web3Modal button web component anywhere in our application
 
 ```ts
-import styles from './page.module.css'
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <w3m-button/>
+      <w3m-button />
     </main>
-  )
+  );
 }
 ```
 

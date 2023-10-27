@@ -68,6 +68,8 @@ zkforge
 zkcast
 Eigen
 IPFS
+viem
+Wagmi
 
 // Used programming language words
 printf
