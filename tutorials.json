@@ -23,5 +23,13 @@
     "time": "1 hour",
     "author": "D. Huisman",
     "slug": "the-graph"
+  },
+  {
+    "title": "Web3Modal & zkSync Era",
+    "description": "learn how to create a website and connect to zkSync ERA with your wallet.",
+    "tags": ["wallets", "website", "web3modal"],
+    "time": "20 minutes",
+    "author": "Glitch-txs",
+    "slug": "web3modal"
   }
 ]
