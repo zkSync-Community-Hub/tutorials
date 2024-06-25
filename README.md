@@ -5,7 +5,7 @@
 
 </div>
 
-This repository contains different tutorials submitted by community members. Tutorials will be referenced in the [zkSync Era documentation website](https://era.zksync.io/docs/).
+This repository contains different tutorials submitted by community members. Tutorials will be referenced in the [zkSync Community Code documentation website](https://code.zksync.io/).
 
 We encourage authors to keep their tutorials updated. 
 
