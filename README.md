@@ -1,9 +1,8 @@
 # Community tutorials
-<div align="center">
 
-![](./community-tutorials.png)
-
-</div>
+## 🚨 [DEPRECATED] This repository is no longer maintained
+This repository is deprecated and no longer actively maintained. 
+Please use the [community-code repository](https://github.com/zksync-community-hub/community-code) instead.
 
 This repository contains different tutorials submitted by community members. Tutorials will be referenced in the [zkSync Community Code documentation website](https://code.zksync.io/).
 
