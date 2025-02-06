@@ -54,6 +54,7 @@ validiums
 validium
 Validium
 sharded
+Sepolia
 
 // Used libraries
 numberish
@@ -92,6 +93,7 @@ porco
 rosso
 insize
 MLOAD
+lisense
 
 // ETC
 gitter
@@ -127,6 +129,8 @@ ewasm
 Evmla
 UUPS
 Uups
+upscaled
+unrequired
 
 // crypto events
 Edcon
